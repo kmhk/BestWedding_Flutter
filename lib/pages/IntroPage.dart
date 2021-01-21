@@ -35,7 +35,7 @@ class _IntroPageState extends State<IntroPage>{
                 height: SDP.sdp(30),
                 child: RaisedButton(
                   onPressed: () {
-                    HelpersService.pushAndRemoveAll(context, '/intro2');
+                    HelpersService.push(context, '/intro2');
                   },
                   child: Text('Skip', style: TextStyle(fontSize: SDP.sdp(18))),
                   color: AppColors.PRIMARY_COLOR,

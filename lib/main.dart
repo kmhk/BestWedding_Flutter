@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_app/pages/GetStartedIntroPage.dart';
+import 'package:wedding_app/pages/GetStartedPage.dart';
 import 'package:wedding_app/pages/Intro2Page.dart';
 import 'package:wedding_app/pages/IntroPage.dart';
 
@@ -27,7 +29,9 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         '/intro' : (context) => IntroPage(),
-        '/intro2' : (context) => Intro2Page()
+        '/intro2' : (context) => Intro2Page(),
+        '/getStartedIntro' : (context) => GetStartedIntropage(),
+        '/getStarted' : (context) => GetStartedPage()
       },
       initialRoute: initialRoute,
     );

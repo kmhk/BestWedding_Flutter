@@ -51,7 +51,7 @@ class _Intro2PageState extends State<Intro2Page>{
                   height: SDP.sdp(35),
                   child: RaisedButton(
                     onPressed: () {
-                      HelpersService.pushAndRemoveAll(context, '/intro2');
+                      HelpersService.push(context, '/getStartedIntro');
                     },
                     child: Text('Get Started', style: TextStyle(fontSize: SDP.sdp(12))),
                     color: Colors.transparent,

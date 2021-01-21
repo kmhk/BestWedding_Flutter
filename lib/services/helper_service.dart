@@ -11,7 +11,9 @@ class HelpersService {
     Navigator.of(context).pushNamed(route);
   }
 
-
+  static backTo(BuildContext context, String route){
+    Navigator.popUntil(context, ModalRoute.withName(route));
+  }
 
 }
 
