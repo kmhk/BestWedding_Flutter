@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/services/SDP.dart';
-import 'package:wedding_app/services/helper_service.dart';
+import 'package:wedding_app/services/HelpersService.dart';
 
 class IntroPage extends StatefulWidget{
   @override
