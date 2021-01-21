@@ -68,7 +68,7 @@ class _Intro2PageState extends State<Intro2Page>{
                   height: SDP.sdp(35),
                   child: RaisedButton(
                     onPressed: () {
-                      HelpersService.pushAndRemoveAll(context, '/intro2');
+                      HelpersService.push(context, '/login');
                     },
                     child: Text('Account sorted? - Login here', style: TextStyle(fontSize: SDP.sdp(12))),
                     color: AppColors.PRIMARY_COLOR,
@@ -86,7 +86,7 @@ class _Intro2PageState extends State<Intro2Page>{
                   height: SDP.sdp(35),
                   child: RaisedButton(
                     onPressed: () {
-                      HelpersService.pushAndRemoveAll(context, '/intro2');
+                      HelpersService.push(context, '/login');
                     },
                     child: Text('Account sorted? - Login Subscriber', style: TextStyle(fontSize: SDP.sdp(12)),textAlign: TextAlign.center,),
                     color: AppColors.PRIMARY_COLOR,

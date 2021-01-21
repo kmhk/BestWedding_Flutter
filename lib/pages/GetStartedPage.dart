@@ -52,7 +52,7 @@ class _GetStartedPage extends State<GetStartedPage>{
                       alignment: Alignment.topRight,
                       child: GestureDetector(
                         onTap: () => {
-                          
+                          HelpersService.push(context, '/login')
                         },
                         child: Text("Login",style: TextStyle(fontSize: SDP.sdp(12)),),
                       ),

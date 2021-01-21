@@ -3,6 +3,7 @@ import 'package:wedding_app/pages/GetStartedIntroPage.dart';
 import 'package:wedding_app/pages/GetStartedPage.dart';
 import 'package:wedding_app/pages/Intro2Page.dart';
 import 'package:wedding_app/pages/IntroPage.dart';
+import 'package:wedding_app/pages/LoginPage.dart';
 
 String initialRoute = '/intro';
 void main() {
@@ -31,7 +32,8 @@ class _MyAppState extends State<MyApp> {
         '/intro' : (context) => IntroPage(),
         '/intro2' : (context) => Intro2Page(),
         '/getStartedIntro' : (context) => GetStartedIntropage(),
-        '/getStarted' : (context) => GetStartedPage()
+        '/getStarted' : (context) => GetStartedPage(),
+        '/login' : (context) => LoginPage(),
       },
       initialRoute: initialRoute,
     );
