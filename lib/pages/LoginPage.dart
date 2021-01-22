@@ -8,6 +8,7 @@ import 'package:wedding_app/services/RateApp.dart';
 import 'package:wedding_app/services/SDP.dart';
 import 'package:wedding_app/services/HelpersService.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/widgets/MainTopBar.dart';
 
 class LoginPage extends StatefulWidget{
 
@@ -32,39 +33,7 @@ class _LoginPage extends State<LoginPage>{
           ),
           child: new Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 0, 0),
-                      alignment: Alignment.topLeft,
-                      child: GestureDetector(
-                        onTap: () => {
-                          HelpersService.backTo(context, '/intro2')
-                        },
-                        child: CircleAvatar(
-                          radius: SDP.sdp(10),
-                          backgroundImage: AssetImage("assets/world_icon.png"),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(0, 3.0.h, 4.0.w, 0),
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        onTap: () => {
-                          HelpersService.push(context, "/getStarted")
-                        },
-                        child: Text("SIGN UP",style: TextStyle(fontSize: 12.0.sp),),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              MainTopBar(showRigthOptions: true,showLoginOption: false,),
               Container(
                 padding: EdgeInsets.fromLTRB(4.0.w, 6.0.h, 4.0.w, 0),
                 alignment: Alignment.topLeft,

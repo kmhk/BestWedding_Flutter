@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:wedding_app/services/SDP.dart';
 import 'package:wedding_app/services/HelpersService.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/widgets/GetStartedDialog.dart';
+import 'package:wedding_app/widgets/MainTopBar.dart';
 
 class GetStartedPage extends StatefulWidget{
   @override
@@ -28,38 +30,9 @@ class _GetStartedPage extends State<GetStartedPage>{
             ),
             child: new Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 5,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 0, 0),
-                        alignment: Alignment.topLeft,
-                        child: GestureDetector(
-                          onTap: () => {
-                            HelpersService.backTo(context, '/intro2')
-                          },
-                          child: CircleAvatar(
-                            radius: 1.8.h,
-                            backgroundImage: AssetImage("assets/world_icon.png"),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 5,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0, 3.0.h, 4.0.w, 0),
-                        alignment: Alignment.topRight,
-                        child: GestureDetector(
-                          onTap: () => {
-                            HelpersService.push(context, '/login')
-                          },
-                          child: Text("Login",style: TextStyle(fontSize: 12.0.sp),),
-                        ),
-                      ),
-                    ),
-                  ],
+                MainTopBar(
+                  showRigthOptions: true,
+                  showLoginOption: true,
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 4.0.w, 0),
@@ -185,7 +158,12 @@ class _GetStartedPage extends State<GetStartedPage>{
                           height: 6.0.h,
                           child: RaisedButton(
                             onPressed: () {
-                              //HelpersService.push(context, '/getStartedIntro');
+                              showDialog(context: context,
+                              builder: (BuildContext context){
+                                return GetStartedDialog(onSelectOption: (String route) => {
+                                  HelpersService.push(context, route)
+                                },);
+                              });
                             },
                             child: Text('SET UP ACCOUNT', style: TextStyle(fontSize:12.0.sp)),
                             color: Colors.transparent,

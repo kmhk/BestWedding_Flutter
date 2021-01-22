@@ -5,6 +5,7 @@ import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/services/SDP.dart';
 import 'package:wedding_app/services/HelpersService.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/widgets/MainTopBar.dart';
 
 class GetStartedIntropage extends StatefulWidget{
   @override
@@ -25,19 +26,7 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
           ),
           child: new Column(
             children: <Widget>[
-              Container(
-                  padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 0, 0),
-                  alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                    onTap: () => {
-                      HelpersService.backTo(context, '/intro2')
-                    },
-                    child: CircleAvatar(
-                      radius: 1.8.h,
-                      backgroundImage: AssetImage("assets/world_icon.png"),
-                    ),
-                  ),
-              ),
+              MainTopBar(showRigthOptions: false),
               Center(
                 child: new Container(
                     alignment: Alignment.topCenter,
