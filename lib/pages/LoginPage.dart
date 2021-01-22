@@ -3,11 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rate_my_app/rate_my_app.dart';
 import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/services/RateApp.dart';
 import 'package:wedding_app/services/SDP.dart';
 import 'package:wedding_app/services/HelpersService.dart';
+import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatefulWidget{
 
@@ -37,7 +37,7 @@ class _LoginPage extends State<LoginPage>{
                   Expanded(
                     flex: 5,
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.04), SDP.sdpPercentHeightScreen(0.03), 0, 0),
+                      padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 0, 0),
                       alignment: Alignment.topLeft,
                       child: GestureDetector(
                         onTap: () => {
@@ -53,30 +53,30 @@ class _LoginPage extends State<LoginPage>{
                   Expanded(
                     flex: 5,
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(0, SDP.sdpPercentHeightScreen(0.03), SDP.sdpPercentWidthScreen(0.04), 0),
+                      padding: EdgeInsets.fromLTRB(0, 3.0.h, 4.0.w, 0),
                       alignment: Alignment.topRight,
                       child: GestureDetector(
                         onTap: () => {
                           HelpersService.push(context, "/getStarted")
                         },
-                        child: Text("SIGN UP",style: TextStyle(fontSize: SDP.sdp(12)),),
+                        child: Text("SIGN UP",style: TextStyle(fontSize: 12.0.sp),),
                       ),
                     ),
                   ),
                 ],
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.04), SDP.sdpPercentHeightScreen(0.06), SDP.sdpPercentWidthScreen(0.04), 0),
+                padding: EdgeInsets.fromLTRB(4.0.w, 6.0.h, 4.0.w, 0),
                 alignment: Alignment.topLeft,
                 child: Column(
                   children: <Widget>[
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text("Login",style: TextStyle(fontSize: SDP.sdp(20))),
+                      child: Text("Login",style: TextStyle(fontSize: 20.0.sp)),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: SDP.sdpPercentWidthScreen(0.07)) ,
-                      height: SDP.sdp(35),
+                      margin: EdgeInsets.only(top: 7.0.h) ,
+                      height: 7.0.h,
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
@@ -85,8 +85,8 @@ class _LoginPage extends State<LoginPage>{
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: SDP.sdpPercentWidthScreen(0.02)) ,
-                      height: SDP.sdp(35),
+                      margin: EdgeInsets.only(top: 1.5.h) ,
+                      height: 7.0.h,
                       child: TextField(
                         obscureText: true,
                         decoration: InputDecoration(
@@ -96,24 +96,24 @@ class _LoginPage extends State<LoginPage>{
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: SDP.sdpPercentWidthScreen(0.03)) ,
-                      height: SDP.sdp(35),
+                      margin: EdgeInsets.only(top: 3.0.h) ,
+                      height: 7.0.h,
                       child: Row(
                         children: <Widget>[
                           Expanded(
                             flex: 5,
                             child: Container(
-                              padding: EdgeInsets.only(left: 0,right: SDP.sdp(5)),
+                              padding: EdgeInsets.only(left: 0,right: 2.0.w),
                               child: ButtonTheme(
-                                height: SDP.sdp(35),
+                                height: 7.0.h,
                                 child: RaisedButton(
                                   onPressed: () {
                                    // HelpersService.push(context, '/getStartedIntro');
                                   },
-                                  child: Text('Login', style: TextStyle(fontSize: SDP.sdp(12))),
+                                  child: Text('Login', style: TextStyle(fontSize: 12.0.sp)),
                                   color: Colors.black12,
                                   textColor: Colors.black38,
-                                  shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(SDP.sdp(20))),
+                                  shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0.sp)),
                                   elevation: 0,
                                 ),
                               )
@@ -122,17 +122,17 @@ class _LoginPage extends State<LoginPage>{
                           Expanded(
                               flex: 5,
                               child: Container(
-                                  padding: EdgeInsets.only(left: SDP.sdp(5)),
+                                  padding: EdgeInsets.only(left: 2.0.w),
                                   child: ButtonTheme(
-                                    height: SDP.sdp(35),
+                                    height: 7.0.h,
                                     child: RaisedButton(
                                       onPressed: () {
                                         //HelpersService.push(context, '/getStartedIntro');
                                       },
-                                      child: Text('Forgot Password', style: TextStyle(fontSize: SDP.sdp(12))),
+                                      child: Text('Forgot Password', style: TextStyle(fontSize: 12.0.sp)),
                                       color: Colors.transparent,
                                       textColor: Colors.black38,
-                                      shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(SDP.sdp(5)),side: BorderSide(color: Colors.black38)),
+                                      shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0.sp),side: BorderSide(color: Colors.black38)),
                                       elevation: 0,
                                     ),
                                   )
@@ -142,7 +142,7 @@ class _LoginPage extends State<LoginPage>{
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: SDP.sdpPercentHeightScreen(0.015)),
+                      padding: EdgeInsets.only(top: 2.5.h),
                       alignment: Alignment.centerLeft,
                       child: GestureDetector(
                         onTap: () => {
@@ -155,43 +155,42 @@ class _LoginPage extends State<LoginPage>{
                 ),
               ),
               Expanded(child: Container(
-                margin: EdgeInsets.only(bottom: SDP.sdp(25) ),
-                width: SDP.sdpPercentHeightScreen(1),
-                padding: EdgeInsets.only(left: SDP.sdpPercentWidthScreen(0.04),right: SDP.sdpPercentWidthScreen(0.04)),
+                margin: EdgeInsets.only(bottom: 2.5.h ),
+                width: 100.0.w,
+                padding: EdgeInsets.only(left: 4.0.w,right: 4.0.w),
                 child: Align(
                   alignment: FractionalOffset.bottomCenter,
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(bottom: SDP.sdpPercentWidthScreen(0.03)) ,
+                        margin: EdgeInsets.only(bottom: 1.5.h) ,
                         child: ButtonTheme(
-                          height: SDP.sdp(45),
-                          minWidth: SDP.sdpPercentWidthScreen(1),
+                          height: 8.0.h,
+                          minWidth: 100.0.w,
                           child: RaisedButton(
                             onPressed: () {
-
                               //HelpersService.push(context, '/getStartedIntro');
                             },
-                            child: Text('Log in With Facebook', style: TextStyle(fontSize: SDP.sdp(12))),
+                            child: Text('Log in With Facebook', style: TextStyle(fontSize:12.0.sp)),
                             color: Colors.transparent,
                             textColor: Colors.black38,
-                            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(SDP.sdp(5)),side: BorderSide(color: Colors.black38)),
+                            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0.sp),side: BorderSide(color: Colors.black38)),
                             elevation: 0,
                           ),
                         ),
                       ),
                       ButtonTheme(
-                        height: SDP.sdp(45),
-                        minWidth: SDP.sdpPercentWidthScreen(1),
+                        height: 8.0.h,
+                        minWidth: 100.0.w,
                         child: RaisedButton(
                           onPressed: () {
                             //HelpersService.push(context, '/getStartedIntro');
                           },
-                          child: Text('Log in With Google', style: TextStyle(fontSize: SDP.sdp(12))),
+                          child: Text('Log in With Google', style: TextStyle(fontSize: 12.0.sp)),
                           color: Colors.transparent,
                           textColor: Colors.black38,
-                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(SDP.sdp(5)),side: BorderSide(color: Colors.black38)),
+                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0.sp),side: BorderSide(color: Colors.black38)),
                           elevation: 0,
                         ),
                       ),
