@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/services/SDP.dart';
 import 'package:wedding_app/services/HelpersService.dart';
+import 'package:sizer/sizer.dart';
 
 class GetStartedIntropage extends StatefulWidget{
   @override
@@ -17,7 +18,6 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
     return Scaffold(
       body: Container(
           decoration: BoxDecoration(
-
             image: DecorationImage(
               image: AssetImage("assets/introimage2.png"),
               fit: BoxFit.cover,
@@ -26,14 +26,14 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
           child: new Column(
             children: <Widget>[
               Container(
-                  padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.04), SDP.sdpPercentHeightScreen(0.03), 0, 0),
+                  padding: EdgeInsets.fromLTRB(4.0.w, 3.0.h, 0, 0),
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
                     onTap: () => {
                       HelpersService.backTo(context, '/intro2')
                     },
                     child: CircleAvatar(
-                      radius: SDP.sdp(10),
+                      radius: 1.8.h,
                       backgroundImage: AssetImage("assets/world_icon.png"),
                     ),
                   ),
@@ -41,22 +41,22 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
               Center(
                 child: new Container(
                     alignment: Alignment.topCenter,
-                    padding: EdgeInsets.fromLTRB(0, SDP.sdpPercentHeightScreen(0.06), 0, 0),
+                    padding: EdgeInsets.fromLTRB(0, 6.0.h, 0, 0),
                     child: CircleAvatar(
-                      radius: SDP.sdp(50),
+                      radius: 9.0.h,
                       backgroundImage: AssetImage("assets/app_logo.png"),
                     )
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.15), SDP.sdpPercentHeightScreen(0.05), SDP.sdpPercentWidthScreen(0.15), 0),
-                child: Text("Choose from one of the following",style: TextStyle(fontSize: SDP.sdp(13)),textAlign: TextAlign.center,),
+                padding: EdgeInsets.fromLTRB(18.0.w, 5.0.h, 18.0.w, 0),
+                child: Text("Choose from one of the following",style: TextStyle(fontSize: 13.0.sp),textAlign: TextAlign.center,),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(0, SDP.sdpPercentHeightScreen(0.05), 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 5.0.h, 0, 0),
                 child: ButtonTheme(
                   minWidth: SDP.sdpPercentWidthScreen(1),
-                  height: SDP.sdp(75),
+                  height: 15.0.h,
                   child: RaisedButton(
                     onPressed: () {
                       HelpersService.push(context, '/getStarted');
@@ -64,8 +64,8 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
-                        padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.01), 0, 0, 0),
-                        child: Text("I'm getting married!", style: TextStyle(fontSize: SDP.sdp(12))),
+                        padding: EdgeInsets.fromLTRB(1.0.w, 0, 0, 0),
+                        child: Text("I'm getting married!", style: TextStyle(fontSize: 12.0.sp)),
                       ),
                     ),
                     color: AppColors.PRIMARY_COLOR,
@@ -79,7 +79,7 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
 
                 child: ButtonTheme(
                   minWidth: SDP.sdpPercentWidthScreen(1),
-                  height: SDP.sdp(75),
+                  height: 15.0.h,
                   child: RaisedButton(
                     onPressed: () {
                       HelpersService.push(context, '/getStarted');
@@ -87,8 +87,8 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          padding: EdgeInsets.fromLTRB(SDP.sdpPercentWidthScreen(0.01), 0, 0, 0),
-                        child: Text("I'm supplier!", style: TextStyle(fontSize: SDP.sdp(12)),textAlign: TextAlign.left,),
+                          padding: EdgeInsets.fromLTRB(1.0.w, 0, 0, 0),
+                        child: Text("I'm supplier!", style: TextStyle(fontSize: 12.0.sp),textAlign: TextAlign.left,),
                       ),
                     ),
 
