@@ -38,7 +38,7 @@ class _IntroPageState extends State<IntroPage>{
                   onPressed: () {
                     HelpersService.push(context, '/intro2');
                   },
-                  child: Text('Skip', style: TextStyle(fontSize: 18.0.sp)),
+                  child: Text('Skip', style: TextStyle(fontSize: 18.0.sp,color: Colors.white)),
                   color: AppColors.PRIMARY_COLOR,
                   textColor: Colors.black38,
                   elevation: 5,

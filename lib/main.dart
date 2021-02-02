@@ -11,7 +11,7 @@ import 'package:wedding_app/pages/SupplierCategoriesPage.dart';
 
 import 'pages/getstarted/GetStartedStepsPage.dart';
 
-String initialRoute = '/newListing';
+String initialRoute = '/intro';
 void main() {
 
   runApp(MyApp());
@@ -21,7 +21,6 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState()  => new _MyAppState();
 }
-
 
 
 class _MyAppState extends State<MyApp> {

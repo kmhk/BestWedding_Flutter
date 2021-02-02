@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/widgets/MainDrawer.dart';
 import 'package:wedding_app/widgets/SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight.dart';
 import 'package:wedding_app/widgets/SupplierCategoriesItem.dart';
@@ -14,6 +15,9 @@ class SupplierCategoriesPage extends StatefulWidget{
 
 class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
   var _selectedIndex = 0;
+  var imageList = ["assets/img_accesories.png","assets/img_accomodation.png","assets/img_beauty.png","assets/img_bonbonniere.png",
+  "assets/img_brindesmaids.png","assets/img_bonbonniere.png","assets/img_cakes.png","assets/img_cars.png"];
+  var titleList = ["Accessories","Accommodation","Beauty","Bonbonniere","Bridal Gowns","Bonbonniere","Cakes","Cars"];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -54,7 +58,7 @@ class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
           Expanded(
             child: GridView.builder(
               shrinkWrap: true,
-              itemCount: 10,
+              itemCount: titleList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
                   crossAxisCount: 2,
                   crossAxisSpacing: 1.0.w,
@@ -62,30 +66,43 @@ class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
                   height: 28.0.h,
                 ),
                 itemBuilder: (BuildContext context, index){
-                  return SupplierCategoriesItem();
+                  return SupplierCategoriesItem(image: imageList[index], title: titleList[index]);
                 })
           )
 
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: AppColors.PRIMARY_COLOR,
+        elevation: 15,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.grey.withOpacity(0.2),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.account_circle),
+            label: "Profile",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.email),
+            label: 'Imbox',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.all_inbox),
+            label: 'Supplier\nCategories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calculate),
+            label: 'Planner',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Yes List',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black12,
+        selectedItemColor: AppColors.PRIMARY_COLOR.withOpacity(0.8),
         onTap: _onItemTapped,
+
       ),
     );
   }

@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class SupplierCategoriesItem extends StatefulWidget{
+  String image;
+  String title;
+
+  SupplierCategoriesItem({@required this.image,@required this.title});
+
   @override
   _SupplierCategoriesItem createState() => _SupplierCategoriesItem();
 }
@@ -22,16 +27,16 @@ class _SupplierCategoriesItem extends State<SupplierCategoriesItem>{
             Expanded(
               flex: 7,
               child: Container(
-                color: Colors.orange,
-                child: Text("test1"),
+
+                child: Image.asset(widget.image),
               ),
             ),
             Expanded(
               flex: 3,
               child: Container(
                 alignment: Alignment.center,
-                color: Colors.blueAccent,
-                child: Text("asdddd"),
+                color: Colors.black12,
+                child: Text(widget.title,style: TextStyle(fontSize: 13.0.sp),),
               ),
             )
           ],

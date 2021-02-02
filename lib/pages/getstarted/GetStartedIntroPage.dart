@@ -39,51 +39,55 @@ class _GetStartedIntropage extends State<GetStartedIntropage>{
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(18.0.w, 5.0.h, 18.0.w, 0),
-                child: Text("Choose from one of the following",style: TextStyle(fontSize: 13.0.sp),textAlign: TextAlign.center,),
+                child: Text("Choose from one of the following",style: TextStyle(fontSize: 13.0.sp,color: AppColors.PRIMARY_COLOR),textAlign: TextAlign.center,),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(0, 5.0.h, 0, 0),
+                padding: EdgeInsets.fromLTRB(8.0.w, 5.0.h, 8.0.w, 0),
+
                 child: ButtonTheme(
-                  minWidth: SDP.sdpPercentWidthScreen(1),
-                  height: 15.0.h,
+                  minWidth: 70.0.w,
+                  height: 8.5.h,
                   child: RaisedButton(
                     onPressed: () {
                       HelpersService.push(context, '/getStarted');
                     },
                     child: Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.center,
                       child: Container(
                         padding: EdgeInsets.fromLTRB(1.0.w, 0, 0, 0),
-                        child: Text("I'm getting married!", style: TextStyle(fontSize: 12.0.sp)),
+                        child: Text("I'm getting married!", style: TextStyle(fontSize: 14.0.sp)),
+
                       ),
                     ),
                     color: AppColors.PRIMARY_COLOR,
-                    textColor: Colors.black38,
+                    textColor: Colors.white,
                     elevation: 0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(3.0.sp),side: BorderSide(color: AppColors.PRIMARY_COLOR)),
                   ),
                 ),
               ),
 
               Container(
-
+                padding: EdgeInsets.fromLTRB(8.0.w, 5.0.h, 8.0.w, 0),
                 child: ButtonTheme(
-                  minWidth: SDP.sdpPercentWidthScreen(1),
-                  height: 15.0.h,
+                  minWidth: 70.0.w,
+                  height: 8.5.h,
                   child: RaisedButton(
                     onPressed: () {
                       HelpersService.push(context, '/getStarted');
                     },
                     child: Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.center,
                       child: Container(
                           padding: EdgeInsets.fromLTRB(1.0.w, 0, 0, 0),
-                        child: Text("I'm supplier!", style: TextStyle(fontSize: 12.0.sp),textAlign: TextAlign.left,),
+                        child: Text("I'm supplier!", style: TextStyle(fontSize: 14.0.sp),textAlign: TextAlign.center,),
                       ),
                     ),
 
-                    color: AppColors.LIGTH_ORANGE,
-                    textColor: Colors.black38,
+                    color: Colors.white,
+                    textColor: AppColors.PRIMARY_COLOR,
                     elevation: 0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(3.0.sp),side: BorderSide(color: AppColors.PRIMARY_COLOR)),
                   ),
                 ),
               ),
