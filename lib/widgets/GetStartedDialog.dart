@@ -18,9 +18,6 @@ class GetStartedDialog extends StatefulWidget{
 class _GetStartedDialog extends State<GetStartedDialog>{
 
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Dialog(

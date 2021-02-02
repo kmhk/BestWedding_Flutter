@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sizer/sizer_util.dart';
-import 'package:wedding_app/pages/GetStartedIntroPage.dart';
-import 'package:wedding_app/pages/GetStartedPage.dart';
-import 'package:wedding_app/pages/GetStartedStepsPage.dart';
-import 'package:wedding_app/pages/Intro2Page.dart';
-import 'package:wedding_app/pages/IntroPage.dart';
+import 'package:wedding_app/pages/getstarted/GetStartedIntroPage.dart';
+import 'package:wedding_app/pages/getstarted/GetStartedPage.dart';
+import 'package:wedding_app/pages/intro/Intro2Page.dart';
+import 'package:wedding_app/pages/intro/IntroPage.dart';
 import 'package:wedding_app/pages/LoginPage.dart';
 import 'package:wedding_app/pages/SupplierCategoriesPage.dart';
 
+import 'pages/getstarted/GetStartedStepsPage.dart';
+
 String initialRoute = '/intro';
 void main() {
+
   runApp(MyApp());
 }
 
