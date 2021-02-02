@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:wedding_app/pages/Intro2Page.dart';
-import 'package:wedding_app/pages/IntroPage.dart';
+import 'package:flutter/services.dart';
+import 'package:sizer/sizer_util.dart';
+import 'package:wedding_app/pages/NewListingPage.dart';
+import 'package:wedding_app/pages/getstarted/GetStartedIntroPage.dart';
+import 'package:wedding_app/pages/getstarted/GetStartedPage.dart';
+import 'package:wedding_app/pages/intro/Intro2Page.dart';
+import 'package:wedding_app/pages/intro/IntroPage.dart';
+import 'package:wedding_app/pages/LoginPage.dart';
+import 'package:wedding_app/pages/SupplierCategoriesPage.dart';
 
-String initialRoute = '/intro';
+import 'pages/getstarted/GetStartedStepsPage.dart';
+
+String initialRoute = '/newListing';
 void main() {
+
   runApp(MyApp());
 }
 
@@ -19,17 +29,34 @@ class _MyAppState extends State<MyApp> {
   @override
 
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Wedding App",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      routes: {
-        '/intro' : (context) => IntroPage(),
-        '/intro2' : (context) => Intro2Page()
-      },
-      initialRoute: initialRoute,
-    );
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            SizerUtil().init(constraints, orientation);
+            return MaterialApp(
+              title: "Wedding App",
+              theme: ThemeData(
+                primarySwatch: Colors.blue,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+              ),
+              routes: {
+                '/intro' : (context) => IntroPage(),
+                '/intro2' : (context) => Intro2Page(),
+                '/getStartedIntro' : (context) => GetStartedIntropage(),
+                '/getStarted' : (context) => GetStartedPage(),
+                '/login' : (context) => LoginPage(),
+                '/getStartedSteps' : (context) => GetStartedStepsPage(),
+                '/supplierCategories' : (context) => SupplierCategoriesPage(),
+                '/newListing': (context) => NewListingPage(),
+              },
+              initialRoute: initialRoute,
+            );
+          },
+        );
+      }
+      );
+
+
   }
 }
