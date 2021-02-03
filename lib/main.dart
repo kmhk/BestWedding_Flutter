@@ -7,7 +7,7 @@ import 'package:wedding_app/pages/getstarted/GetStartedPage.dart';
 import 'package:wedding_app/pages/intro/Intro2Page.dart';
 import 'package:wedding_app/pages/intro/IntroPage.dart';
 import 'package:wedding_app/pages/LoginPage.dart';
-import 'package:wedding_app/pages/SupplierCategoriesPage.dart';
+import 'file:///C:/Users/admin/Desktop/AndroidProjects/wedding_app/lib/pages/home/HomePage.dart';
 
 import 'pages/getstarted/GetStartedStepsPage.dart';
 
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
                 '/getStarted' : (context) => GetStartedPage(),
                 '/login' : (context) => LoginPage(),
                 '/getStartedSteps' : (context) => GetStartedStepsPage(),
-                '/supplierCategories' : (context) => SupplierCategoriesPage(),
+                '/supplierCategories' : (context) => HomePage(),
                 '/newListing': (context) => NewListingPage(),
               },
               initialRoute: initialRoute,

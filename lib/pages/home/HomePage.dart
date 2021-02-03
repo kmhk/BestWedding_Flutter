@@ -3,21 +3,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/pages/home/ProfilePage.dart';
+import 'package:wedding_app/pages/home/SupplierCategoriesPage.dart';
 import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/widgets/MainDrawer.dart';
 import 'package:wedding_app/widgets/SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight.dart';
 import 'package:wedding_app/widgets/SupplierCategoriesItem.dart';
 
-class SupplierCategoriesPage extends StatefulWidget{
+class HomePage extends StatefulWidget{
   @override
-  _SupplierCategoriesPage createState() => _SupplierCategoriesPage();
+  _HomePage createState() => _HomePage();
 }
 
-class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
-  var _selectedIndex = 0;
-  var imageList = ["assets/img_accesories.png","assets/img_accomodation.png","assets/img_beauty.png","assets/img_bonbonniere.png",
-  "assets/img_brindesmaids.png","assets/img_bonbonniere.png","assets/img_cakes.png","assets/img_cars.png"];
-  var titleList = ["Accessories","Accommodation","Beauty","Bonbonniere","Bridal Gowns","Bonbonniere","Cakes","Cars"];
+class _HomePage extends State<HomePage>{
+  var _selectedIndex = 2;
+
+  var titleList = ["Profile","Imbox","Supplier Categories"];
+
+  List<Widget> _widgetOptions = <Widget>[
+    ProfilePage(),
+    SupplierCategoriesPage(),
+    SupplierCategoriesPage(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -29,14 +36,12 @@ class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
-    var size = MediaQuery.of(context).size;
-    /*24 is for notification bar on Android*/
-    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
-    final double itemWidth = size.width / 2.5;
+
     return Scaffold(
       drawer: MainDrawer(),
       appBar: AppBar(
         toolbarHeight: 10.0.h,
+        backgroundColor: AppColors.PRIMARY_COLOR,
         actions: <Widget>[
           CircleAvatar(
             radius: 4.0.h,
@@ -52,23 +57,10 @@ class _SupplierCategoriesPage extends State<SupplierCategoriesPage>{
             height: 7.5.h,
             width: 100.0.w,
             color: Colors.black26,
-            child: Text("Supplier Categories",style: TextStyle(fontSize: 16.0.sp),),
+            child: Text(titleList[_selectedIndex],style: TextStyle(fontSize: 16.0.sp),),
           ),
           Divider(height: 2.0.h,),
-          Expanded(
-            child: GridView.builder(
-              shrinkWrap: true,
-              itemCount: titleList.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 1.0.w,
-                  mainAxisSpacing: 2.5.w,
-                  height: 28.0.h,
-                ),
-                itemBuilder: (BuildContext context, index){
-                  return SupplierCategoriesItem(image: imageList[index], title: titleList[index]);
-                })
-          )
+          _widgetOptions[_selectedIndex]
 
         ],
       ),
