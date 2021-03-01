@@ -1,42 +1,50 @@
 
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:sizer/sizer.dart';
-import 'package:wedding_app/resources/values/AppColors.dart';
 import 'package:wedding_app/widgets/CustomDropDown.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
-class ProfilePage extends StatefulWidget{
+
+class MyProfilePage extends StatefulWidget{
   @override
-  _ProfilePage createState() => _ProfilePage();
+  _MyProfilePage createState() => _MyProfilePage();
 }
 
-class _ProfilePage extends State<ProfilePage>{
+class _MyProfilePage extends State<MyProfilePage>{
   var list = ["prueba1","prueba2","prueba3"];
-  var genderList = ["Male","Female"];
-  var countryList = ["Country1","Country2"];
-  var stateList =["State1","State2"];
   bool statusEmail = false;
   bool statusMessages = false;
 
   @override
   Widget build(BuildContext context) {
-
-    return Expanded(
-      child: SingleChildScrollView(
+      return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Image.asset("assets/img_cakes.png",height:25.0.h,width: 25.0.h,fit: BoxFit.fill,),
-                Container(
-                  margin: EdgeInsets.only(top: 20.5.h,left: 20.5.h),
-                  child: Image.asset("assets/edit_icon.png",height: 3.5.h,width: 3.5.h,color: Colors.black,),
-                )
 
-              ],
+            Container(
+
+              child:FractionallySizedBox(
+                alignment: Alignment.centerLeft,
+                widthFactor: 0.5,
+                child: Container(
+                  height: 45.0.w,
+                  child: Stack(
+                    children: <Widget>[
+                      Image.asset("assets/placeholder.png",height: 45.0.w,width: 50.0.w,fit: BoxFit.cover,),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 3.5.h,right: 4.0.w),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Image.asset("assets/edit_icon.png",height: 6.0.w,width: 6.0.w,),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(left: 7.0.w,right: 7.0.w,top: 2.0.h),
@@ -54,7 +62,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -63,7 +71,7 @@ class _ProfilePage extends State<ProfilePage>{
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 2.0.h, bottom: 2.0.h),
-                    child: CustomDropDrown(list: genderList, defaultValue: "Gender"),
+                    child: CustomDropDrown(list: list, defaultValue: "Gender"),
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -77,7 +85,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -98,7 +106,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -108,11 +116,11 @@ class _ProfilePage extends State<ProfilePage>{
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 2.0.h),
-                    child: CustomDropDrown(list: countryList, defaultValue: "Country"),
+                    child: CustomDropDrown(list: list, defaultValue: "Country"),
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 2.0.h),
-                    child: CustomDropDrown(list: stateList, defaultValue: "State"),
+                    child: CustomDropDrown(list: list, defaultValue: "State"),
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 2.0.h,bottom: 2.0.h),
@@ -130,7 +138,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -151,7 +159,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -185,7 +193,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -204,7 +212,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -223,7 +231,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -242,7 +250,7 @@ class _ProfilePage extends State<ProfilePage>{
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: AppColors.PRIMARY_COLOR,
+                            color: Colors.orange,
                             style: BorderStyle.solid
                         ),
                       ),
@@ -277,7 +285,7 @@ class _ProfilePage extends State<ProfilePage>{
                                   width: 7.0.w,
                                   height: 2.0.h,
                                   inactiveToggleColor: Colors.black54,
-                                  activeToggleColor: AppColors.PRIMARY_COLOR,
+                                  activeToggleColor: Colors.orange,
                                   activeColor: Colors.white,
                                   inactiveColor: Colors.white,
                                   toggleSize: 2.5.w,
@@ -333,9 +341,9 @@ class _ProfilePage extends State<ProfilePage>{
                                     width: 0.7.w,
                                   ),
                                   inactiveSwitchBorder: Border.all(
-                                    color: Colors.black54,
-                                    width: 0.7.w,
-                                  ),
+                                  color: Colors.black54,
+                                  width: 0.7.w,
+                                ),
                                   onToggle: (val) {
                                     setState(() {
                                       statusMessages = val;
@@ -435,11 +443,11 @@ class _ProfilePage extends State<ProfilePage>{
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.only(top: 3.5.h, bottom: 1.0.h),
+                    margin: EdgeInsets.only(top: 3.5.h, ),
                     child: RaisedButton(
                       onPressed: () {},
-                      padding: EdgeInsets.only(top: 2.2.h,bottom: 2.2.h,left: 1.0.w, right: 1.0.w),
-                      color: AppColors.PRIMARY_COLOR,
+                      padding: EdgeInsets.only(top: 3.2.h,bottom: 3.2.h,left: 1.0.w, right: 1.0.w),
+                      color: Colors.white,
                       textColor: Colors.grey,
                       shape: RoundedRectangleBorder(
                           side: BorderSide(width: 0.1.w, color: Colors.grey)
@@ -448,13 +456,12 @@ class _ProfilePage extends State<ProfilePage>{
                           style: TextStyle(fontSize: 15)),
                     ),
                   ),
+                  SizedBox(height: 12.0.h,)
                 ],
               ),
             ),
           ],
         ),
-      ),
-    );
+      );
   }
-
 }

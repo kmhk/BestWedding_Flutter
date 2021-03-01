@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/services/HelpersService.dart';
 
 class SupplierCategoriesItem extends StatefulWidget{
   String image;
@@ -19,7 +20,11 @@ class _SupplierCategoriesItem extends State<SupplierCategoriesItem>{
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 2.5.w),
-      child: Card(
+      child: GestureDetector(
+        onTap: () => {
+        HelpersService.push(context, '/SwipeSectionPage')
+        },
+        child: Card(
         elevation: 2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -42,6 +47,7 @@ class _SupplierCategoriesItem extends State<SupplierCategoriesItem>{
           ],
         ),
 
+      ),
       ),
     );
   }

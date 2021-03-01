@@ -30,6 +30,12 @@ dependencies:
   cupertino_icons: ^1.0.0
   rate_my_app: ^0.7.1+1
   sizer: ^1.1.8
+  flutter_switch: ^0.2.0
+  dotted_border: ^1.0.7
+  carousel_pro: ^1.0.0
+  table_calendar:
+  google_maps_flutter: ^0.3.0+2
+  flutter_tindercard: ^0.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

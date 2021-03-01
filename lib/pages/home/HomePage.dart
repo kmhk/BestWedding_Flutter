@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wedding_app/pages/MyProfilePage.dart';
+import 'package:wedding_app/pages/MyProfileUserPage.dart';
+import 'package:wedding_app/pages/home/ImboxPage.dart';
 import 'package:wedding_app/pages/home/ProfilePage.dart';
 import 'package:wedding_app/pages/home/SupplierCategoriesPage.dart';
 import 'package:wedding_app/resources/values/AppColors.dart';
@@ -22,7 +25,7 @@ class _HomePage extends State<HomePage>{
 
   List<Widget> _widgetOptions = <Widget>[
     ProfilePage(),
-    SupplierCategoriesPage(),
+    ImboxPage(),
     SupplierCategoriesPage(),
   ];
 
@@ -80,7 +83,7 @@ class _HomePage extends State<HomePage>{
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.all_inbox),
-            label: 'Supplier\nCategories',
+            label: 'Categories'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calculate),
