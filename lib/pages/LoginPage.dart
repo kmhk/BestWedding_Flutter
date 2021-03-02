@@ -77,7 +77,7 @@ class _LoginPage extends State<LoginPage>{
                                 height: 7.0.h,
                                 child: RaisedButton(
                                   onPressed: () {
-                                   // HelpersService.push(context, '/getStartedIntro');
+                                    HelpersService.push(context, '/supplierCategories');
                                   },
                                   child: Text('Login', style: TextStyle(fontSize: 12.0.sp)),
                                   color: Colors.black12,
