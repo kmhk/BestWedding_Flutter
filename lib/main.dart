@@ -20,10 +20,10 @@ import 'package:wedding_app/pages/SubscriberCalendar5Page.dart';
 import 'package:wedding_app/pages/SwipeSectionPage.dart';
 import 'package:wedding_app/pages/getstarted/GetStartedIntroPage.dart';
 import 'package:wedding_app/pages/getstarted/GetStartedPage.dart';
+import 'package:wedding_app/pages/home/HomePage.dart';
 import 'package:wedding_app/pages/intro/Intro2Page.dart';
 import 'package:wedding_app/pages/intro/IntroPage.dart';
 import 'package:wedding_app/pages/LoginPage.dart';
-import 'file:///C:/Users/admin/Desktop/AndroidProjects/wedding_app/lib/pages/home/HomePage.dart';
 
 import 'pages/getstarted/GetStartedStepsPage.dart';
 
@@ -80,7 +80,6 @@ class _MyAppState extends State<MyApp> {
                 '/subscriberCalendar4':(context)=> SubscriberCalendar4Page(),
                 '/subscriberCalendar5':(context)=> SubscriberCalendar5Page(),
                 '/SwipeSectionPage':(context)=> SwipeSectionPage(),
-
               },
               initialRoute: initialRoute,
             );
